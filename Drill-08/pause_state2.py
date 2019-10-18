@@ -2,7 +2,7 @@ from pico2d import *
 import game_framework
 import main_state
 
-count = 0.0
+count = 400
 
 
 image = None
@@ -30,7 +30,10 @@ def exit():
 
 
 def update():
-    pass
+    global count
+    count -=1
+    if count==0:
+        count=400
 
 
 def draw():
@@ -39,8 +42,8 @@ def draw():
     clear_canvas()
     main_state.grass.draw()
     main_state.boy.draw()
-    image.draw(400, 300, 200, 200)
-    draw()
+    if count>200:
+        image.draw(400, 300, 200, 200)
     update_canvas()
 
 
