@@ -1,7 +1,8 @@
 import random
 import json
 import os
-import pause_state
+#import pause_state
+import pause_state2
 
 from pico2d import *
 
@@ -18,7 +19,7 @@ font = None
 
 x=0
 y=0
-
+count=1
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
@@ -69,6 +70,7 @@ def resume():
 
 
 def handle_events():
+    global count
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -77,7 +79,7 @@ def handle_events():
          game_framework.change_state(title_state)
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             x,y=event.x,event.y
-            game_framework.push_state(pause_state)
+            game_framework.push_state(pause_state2)
 
 
 
