@@ -7,7 +7,7 @@ from pico2d import *
 import game_framework
 
 
-from boy import Boy
+from DASH import Boy
 from grass import Grass
 
 
